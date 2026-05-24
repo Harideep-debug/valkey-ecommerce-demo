@@ -1,0 +1,106 @@
+/* ================= Common Card Css Start ========================= */
+.common-card {
+    border: 0;
+    border-radius: 16px;
+    background-color: hsl(var(--white));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, hsl(var(--main)), hsl(var(--main-two)));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    &:hover {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        transform: translateY(-8px);
+        
+        &::before {
+            opacity: 1;
+        }
+    }
+    
+    .card-header, .card-footer {
+        padding: 18px 24px;
+        background-color: hsl(var(--white));
+        border-bottom: 1px solid var(--gray-100);
+        @include xsm-screen {
+            padding: 14px 16px;
+        }
+    }
+    .card-header {
+        background: linear-gradient(135deg, hsl(var(--main) / 0.08) 0%, hsl(var(--main-two) / 0.08) 100%);
+        border-bottom: 2px solid var(--gray-100);
+        .title {
+            color: hsl(var(--heading-color));
+            margin-block-end: 0;
+            font-weight: 700;
+            font-size: rem(18px);
+        }
+    }
+    .card-body {
+        padding: 24px;
+        @include xsm-screen {
+            padding: 18px 14px;
+        }
+    }
+    .card-footer {
+        border-top: 1px solid var(--gray-100);
+        border-bottom: 0;
+        background: linear-gradient(135deg, hsl(var(--white) / 0.5) 0%, hsl(var(--white) / 0.3) 100%);
+    }
+}
+
+/* Product Card Specific */
+.product-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: hsl(var(--white));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #F0F4FF 0%, #F7F5FE 100%);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, hsl(var(--main) / 0.12));
+            z-index: 1;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        &:hover img {
+            transform: scale(1.1) rotate(1deg);
+        }
+    }
+}
+
+/* ================= Common Card Css End ========================= */

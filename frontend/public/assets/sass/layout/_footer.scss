@@ -1,0 +1,78 @@
+
+/* ============= Footer Start Here ======================= */
+.footer {
+    margin-block-start: auto;
+    background-color: hsl(var(--white));
+    border-top: 1px solid var(--gray-100);
+    padding: 48px 0 0;
+    
+    &-item-wrapper {
+        gap: clampCal(32, 44, 1199, 1899);
+    }
+    &-item-two-wrapper {
+        gap: clampCal(32, 90, 1199, 1899);
+    }
+    &-item {
+        &__logo {
+            margin-block-end: 20px;
+            a {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 190px;
+                    max-height: 64px;
+                    transition: transform 0.3s ease;
+                    
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+        
+        h6, p, a {
+            margin-block-end: 12px;
+            color: var(--gray-700);
+            font-size: rem(14px);
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--gray-700);
+            transition: all 0.3s ease;
+            
+            &:hover {
+                color: hsl(var(--main));
+                padding-left: 4px;
+            }
+        }
+    }
+}
+
+.bottom-footer {
+    background-color: var(--gray-50);
+    border-top: 1px solid var(--gray-100);
+    padding: 24px 0;
+    margin-top: 40px;
+    
+    p {
+        color: var(--gray-600);
+        font-size: rem(13px);
+    }
+    
+    a {
+        color: hsl(var(--main));
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.body-bottom-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+/* ============= Footer End Here ======================= */

@@ -1,0 +1,39 @@
+/* ================== Section Heading Css Start ========================= */
+.section-heading {
+    margin-bottom: 40px;
+    @include lg-screen {
+        margin-bottom: 28px;
+    }
+    
+    h2, h3, h4, h5 {
+        margin-bottom: 12px;
+        color: hsl(var(--heading-color));
+        font-weight: 700;
+    }
+    
+    p {
+        color: var(--gray-600);
+        font-size: rem(15px);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    &.writing-mode {
+        @media (min-width: 1200px) {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+        }
+        @media (max-width: 1199px) {
+            margin-bottom: 60px !important;
+        }
+    }
+    
+    &.text-center {
+        text-align: center;
+        
+        h2, h3, h4, h5 {
+            margin-bottom: 16px;
+        }
+    }
+}
+/* ================== Section Heading Css End ========================= */
